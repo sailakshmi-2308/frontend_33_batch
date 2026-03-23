@@ -13,10 +13,17 @@
     />
 
     <style>
+        body{
+        background:linear-gradient(to right,#48CBE1,#F51FFE)
+        }
       .form-container {
-        border: 2px solid black;
+        /* border: 2px solid black; */
         width: 40%;
         margin: auto;
+        padding:30px;
+        border-radius: 10px;
+        background-color: white;
+        
       }
       .form-container h1 {
         text-align: center;
@@ -25,7 +32,56 @@
         margin-bottom: 15px;
       }
       .input-group{
-        margin-top:15px
+        margin-top:15px;
+        border-bottom: 1px solid grey
+      }
+      .input-group input{
+        border:none;
+        outline:none;
+        width:90%
+      }
+      .forgot{
+        text-align: right;
+       
+      }
+      .forgot a{
+        color:gray
+      }
+
+      a{
+        text-decoration: none;
+      }
+
+      .form-field button{
+        width:100%;
+        border-radius: 999px;
+        padding:15px;
+        background:linear-gradient(to right,#48CBE1,#F51FFE);
+        border:none
+      }
+
+      .form-center{
+        text-align: center;
+        margin-top:50px
+      }
+      .social-media-links i{
+        border-radius: 50%;
+        /* background-color: blue; */
+        padding:15px;
+        color:white
+      }
+      .fa-facebook-f{
+        background-color: #365A94 ;
+      }
+      .fa-twitter{
+        background-color: #18A1F6;
+      }
+      .fa-google{
+        background-color: #DE8377;
+      }
+      .sign-up{
+        text-align: center;
+        margin-top:110px
       }
     </style>
   </head>
@@ -52,7 +108,7 @@
         </div>
       </div>
 
-      <div  class="form-field">
+      <div  class="form-field forgot">
         <a href="">forgot password?</a>
       </div>
 
@@ -60,14 +116,16 @@
         <button>Login</button>
       </div>
 
-      <div  class="form-field">
+      <div  class="form-field form-center">
         <p>or signup using</p>
+        <div class="social-media-links">
         <i class="fa-brands fa-facebook-f"></i>
         <i class="fa-brands fa-twitter"></i>
         <i class="fa-brands fa-google"></i>
+        </div>
       </div>
 
-      <div class="form-field">
+      <div class="form-field sign-up">
         <p>or sign up using</p>
         <a href="">SIGN UP</a>
       </div>
