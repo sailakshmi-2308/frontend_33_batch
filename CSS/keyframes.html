@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .magic{
+            width:100px;
+            height:100px;
+            background-color: bisque;
+            animation-name: sailaja;
+            animation-duration: 10s;
+            animation-delay: 2s;
+            /* animation-iteration-count: infinite; */
+            /* animation-direction: reverse; */
+            /* animation-direction: alternate; */
+            animation-fill-mode: forwards;
+            animation-timing-function: ease;
+        }
+
+        .saraswathi{
+            animation-timing-function: ease-in-out
+        }
+        @keyframes sailaja{
+            /* from{
+                width:300px;
+                background-color: black;
+                transform: translate(400px);
+            }
+            to{
+                height:300px;
+                background-color: pink;
+            } */
+
+            0%{
+                width:300px;
+                height:300px;
+                background-color: lightcoral;
+                transform: translate(400px);
+            }
+            /* 50%{
+                border-radius: 50%;
+                background-color: blue;
+                transform: translate(400px);
+
+            }
+            75%{
+                width:400px;
+                height: 400px;
+                background-color: red;
+            } */
+            100%{
+                border-radius: 50%;
+                transform: scale(0.3);
+                background-color: skyblue;
+
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="magic">
+
+    </div>
+
+    <div class="saraswathi magic">
+
+    </div>
+</body>
+</html>

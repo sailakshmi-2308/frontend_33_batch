@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let student_name="tarun"
+        let age=20
+        let place="vijayawada"
+
+
+        let student={
+            name:"tarun",
+            age:20,
+            place:"vijayawada"
+
+        }
+
+        //access
+        console.log(student.name,student.age)
+        console.log(student["name"]) //bracket notation
+        //add
+        student.batch="java"
+        console.log(student)
+
+    //delete
+    delete student.place;
+    console.log(student);
+
+    //edit
+    student.age="22"
+    console.log(student)
+
+console.log(Object.keys(student))
+console.log(Object.values(student))
+console.log(Object.entries(student))
+
+//array of objects
+
+let student_details=[
+{name:"manaschaya",age:20,place:"vijayawada"},
+{name:"sathvika",age:21,place:"vijayawada"},
+{name:"satwik",age:20,place:"vizag"}
+]
+
+
+console.log(student_details[0].name)
+console.log(student_details[2].age)
+
+
+student_details.forEach(function(k){
+    console.log(k.name)
+
+})
+
+
+
+let student1={
+    name:"tarun",
+    age:20,
+    hello:function(){
+        console.log("hellooooooo everyoneeeeeeeeeeeeee")
+    }
+
+}
+
+student1.hello()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+</body>
+</html>

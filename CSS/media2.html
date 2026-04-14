@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .parent-container {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-template-rows: 200px 200px
+        }
+
+        .box1 {
+            background-color: green;
+        }
+
+        .box2 {
+            background-color: red;
+        }
+
+        .box3 {
+            background-color: skyblue;
+        }
+
+        .box4 {
+            background-color: black;
+        }
+
+        @media(max-width:576px) {
+            .parent-container {
+                grid-template-columns: 1fr;
+                grid-template-rows: 200px 200px 200px 200px;
+            }
+
+        }
+
+        @media(min-width:577px) and (max-width:768px) {
+            .parent-container {
+                grid-template-columns: 1fr 1fr;
+                grid-template-rows: 200px 200px 200px 200px;
+
+            }
+        }
+         @media(min-width:800px) and (max-width:1200px) {
+            .parent-container {
+                grid-template-columns: repeat(3,1fr);
+                grid-template-rows: 200px 200px 200px 200px;
+
+            }
+        }
+    
+    </style>
+</head>
+
+<body>
+    <div class="parent-container">
+        <div class="box1">Assigned Batched</div>
+        <div class="box2">Assigned Batched</div>
+        <div class="box3">Assigned Batched</div>
+        <div class="box4">Assigned Batched</div>
+    </div>
+</body>
+
+</html>
