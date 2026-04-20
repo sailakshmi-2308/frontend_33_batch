@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+</head>
+
+<body>
+    <input type="text" placeholder="enter student name" id="student">
+    <button onclick="addStudent()">Add Student</button>
+    <ul id="student_list">
+        
+    </ul>
+
+    <script>
+        function addStudent() {
+
+
+
+            let student_field = document.getElementById("student").value
+            console.log(student_field)
+
+            if (student_field == "") {
+                alert("oye,first name enter cheyyi nuvvu");
+                return false
+            }
+            // console.log("hellooooo")
+
+            let existingStudents = getStudentsFromStorage();  //[]
+            console.log(existingStudents);
+
+            existingStudents.push(student_field)
+            console.log(existingStudents);
+
+            localStorage.setItem("students", JSON.stringify(existingStudents))
+
+            loadStudents()
+
+
+        }
+
+        function getStudentsFromStorage() {
+            let students = localStorage.getItem("students");
+            return students ? JSON.parse(students) : []
+
+        }
+
+        function loadStudents(){
+
+                let students_list=document.getElementById("student_list")
+            let existingStudents=getStudentsFromStorage() 
+            console.log(existingStudents);
+            existingStudents.forEach(function(i,index){
+                console.log(i,index);
+                let li=document.createElement("li")
+                li.innerHTML=i
+                students_list.appendChild(li)
+
+
+            })
+
+
+        }
+    </script>
+</body>
+
+</html>
