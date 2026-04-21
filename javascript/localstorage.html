@@ -13,6 +13,10 @@
     </ul>
 
     <script>
+
+        onload=function(){
+            loadStudents()
+        }
         function addStudent() {
 
 
@@ -48,16 +52,27 @@
         function loadStudents(){
 
                 let students_list=document.getElementById("student_list")
+                students_list.innerHTML=""
             let existingStudents=getStudentsFromStorage() 
             console.log(existingStudents);
             existingStudents.forEach(function(i,index){
                 console.log(i,index);
                 let li=document.createElement("li")
-                li.innerHTML=i
+                li.innerHTML=`${i} <button onclick="deleteStudents(${index})">delete</button>`
                 students_list.appendChild(li)
-
-
             })
+
+
+        }
+
+
+        function deleteStudents(index){
+
+            console.log(index);
+            let existingStudents=getStudentsFromStorage();
+            existingStudents.splice(index,1);
+            localStorage.setItem("students", JSON.stringfy(existingStudents));
+            loadStudents()
 
 
         }
