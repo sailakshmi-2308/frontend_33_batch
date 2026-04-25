@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        let studentList=[
+{name:"ratna",age:19,branch:"python"},
+{name:"satheesh",age:23,branch:"react"},
+{name:"balaji",age:21,branch:"java"},
+{name:"satwik",age:22,branch:"java"},
+ ]
+
+ let a=studentList.map((satheesh)=>{
+    return satheesh.name
+
+ })
+ console.log(a)
+
+
+ let c=studentList.map((i)=>{
+    return i.age+10
+
+ })
+ console.log(c)
+
+
+ let g=studentList.every((i)=>{
+
+    if(i.age>20){
+        return i
+    }
+
+ })
+ console.log(g)
+
+
+
+//reduce
+
+
+let s =[2,3,4,5,6]
+
+
+let b=s.reduce((accu,curre)=>{
+    return accu+curre
+
+},0)
+
+console.log(b)
+
+
+
+    </script>
+</body>
+</html>

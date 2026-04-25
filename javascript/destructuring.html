@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+        let student={
+            name:"satheesh",
+            age:20,
+            branch:"java"
+        }
+
+        let ratna={...student}
+        console.log(ratna)
+
+        console.log(student.name)
+        console.log(student.age)
+
+
+        let {name,...sai}=student
+        console.log(sai)
+  console.log(name)
+
+
+  let manaschaya=[3,4,5,6,"p"]
+
+  let h=[...manaschaya]
+  console.log(h)
+
+  let k= [2,3,4]
+  let l=[3,4,5]
+
+  let u=[45,67,...k,...l]
+  console.log(u)
+
+
+
+  console.log(manaschaya[1]);
+
+  let [a,b,c,d,e,f]=manaschaya
+  console.log(d)
+
+
+
+  //rest operator  ...
+
+  function srujan(a,b,...tarun){
+    console.log(tarun)
+
+  }
+  srujan(2,3,4,5,6)
+
+
+
+  //
+
+  function add(a,b){
+   return a+b
+  }
+  add(2,3)
+
+
+  let add=(a,b)=>{
+return a+b
+  }
+  add(2,3)
+
+  let add=(a,b)=>a+b
+
+
+
+
+
+
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+    <style>
+        #doctors {
+            display: flex;
+            justify-content: space-evenly;
+        }
+
+        .card {
+            border: 2px solid black;
+            padding: 20px;
+            width: 20%
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="doctors">
+
+    </div>
+
+
+    <script>
+
+        function getDoctors() {
+            axios.get("https://doc-back.onrender.com/doctors")
+                .then((result) => {
+                    // console.log(result.data);
+                    
+                    showDoctors(result.data)
+                })
+
+        }
+        function showDoctors(balaji) {
+            console.log(balaji);
+            balaji.map((i) => {
+                console.log(i.name);
+
+                document.getElementById("doctors").innerHTML += `
+                
+                
+                <div class="card"> 
+                    <p>${i.name}</p>
+                    <p>${i.salary}</p>
+                    <p>${i.gender}</p>
+                        <p>${i.age}</p>
+                          <p>${i.specialization}</p>
+
+                 </div>
+                
+                `
+
+
+
+
+            })
+
+        }
+
+        getDoctors()
+    </script>
+</body>
+
+</html>

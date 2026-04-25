@@ -15,6 +15,17 @@
         <input type="email" placeholder="enter your email" id="email">
         </div>
 
+        <div>
+            <label for="">Gender:</label>
+
+            <label for="sai">Male</label>
+            <input type="radio" name="srujan" id="sai">
+
+             <label for="tarun">Female</label>
+            <input type="radio" name="srujan" id="tarun">
+
+        </div>
+
         <button>Submit</button>
     </form>
 
@@ -24,7 +35,9 @@
         function validation(){
 
             let name=document.getElementById("name").value;
-            let email=document.getElementById("email").value
+            let email=document.getElementById("email").value;
+            let male=document.getElementById("sai")
+             let female=document.getElementById("tarun")
             let namecheck=/^[a-zA-Z1-9_]{3,16}$/
             let emailcheck= /^[a-zA-Z0-9._%+-]+@codegnan\.com$/;
 
@@ -40,6 +53,12 @@
             if(!email.match(emailcheck)){
                 alert("enter correct email");
                 return false
+            }
+
+            if(male.checked==false && female.checked==false){
+                alert("please select your gender");
+                return false
+
             }
 
 
