@@ -34,7 +34,7 @@
             axios.get("https://doc-back.onrender.com/doctors")
                 .then((result) => {
                     // console.log(result.data);
-                    
+
                     showDoctors(result.data)
                 })
 
@@ -53,7 +53,8 @@
                     <p>${i.gender}</p>
                         <p>${i.age}</p>
                           <p>${i.specialization}</p>
-
+                          <button onclick="deleteDoctors(${i.id})">delete</button>
+                        <button onclick="updateDoctors(${i.id},'${i.name}',${i.salary},'${i.gender}',${i.age},'${i.specialization}')">update</button>
                  </div>
                 
                 `
@@ -64,6 +65,49 @@
             })
 
         }
+
+        function deleteDoctors(id) {
+
+            axios.delete(`https://doc-back.onrender.com/doctors/${id}`)
+                .then((res) => {
+                    console.log(res);
+                    alert("deleted successfully");
+                    getDoctors()
+
+                })
+
+
+
+        }
+
+
+        function updateDoctors(id, oldname, oldsalary, oldgender, oldage, oldspecialization) {
+            console.log(oldname);
+
+            let newName = prompt("wnter your new name", oldname)
+            let newSalary = prompt("enter your  new salary", oldsalary)
+            let newGender = prompt("enter your  new gender", oldgender)
+            let newAge = prompt("enter your  new age", oldage)
+            let newSpecialization = prompt("enter your  new specialization", oldspecialization)
+
+
+            axios.put(`https://doc-back.onrender.com/doctors/${id}`, {
+                name: newName,
+                salary: newSalary,
+                gender: newGender,
+                age: newAge,
+                specialization: newSpecialization
+
+            })
+                .then((response) => {
+                    alert("updated successfully");
+                    getDoctors()
+
+                })
+
+        }
+
+
 
         getDoctors()
     </script>
