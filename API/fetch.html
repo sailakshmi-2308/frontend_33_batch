@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</head>
+<body>
+    <script>
+         function getPatients(){
+            fetch("https://doc-back.onrender.com/patients",{
+                method:"GET"
+            })
+            .then((respoo)=>{
+                console.log(respoo)  //json text  = string
+                // console.log(respoo.json()) //promise
+                return respoo.json() //promise
+
+            })
+            .then((data)=>{
+                console.log(data)
+
+            })
+
+        }
+         getPatients()
+    </script>
+</body>
+</html>
